@@ -46,7 +46,7 @@
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.Buscador = new System.Windows.Forms.TabPage();
             this.Reportes = new System.Windows.Forms.TabPage();
-<<<<<<< HEAD
+//<<<<<<< HEAD
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -56,8 +56,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-=======
->>>>>>> 12c40a203835cd055dd95d439c94a4b16f931636
+//=======
+//>>>>>>> 12c40a203835cd055dd95d439c94a4b16f931636
             this.tabControl1.SuspendLayout();
             this.TabMapa.SuspendLayout();
             this.Buscador.SuspendLayout();
