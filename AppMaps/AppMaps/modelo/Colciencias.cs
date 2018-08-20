@@ -47,8 +47,10 @@ namespace AppMaps.modelo
             {
                 if (line[0] != '*')
                 {
-                    var info = line.Split('	');
+                    var info = line.Split('\t');
+                    Console.WriteLine(info[0]);
                     String []fecha = info[2].Split('/');
+                
                     int dia = Int32.Parse(fecha[0]);
                     int mes = Int32.Parse(fecha[1]);
                     int año = Int32.Parse(fecha[2]);
