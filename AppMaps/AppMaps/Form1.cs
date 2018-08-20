@@ -72,12 +72,50 @@ namespace AppMaps
 
         }
 
+
+
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem.ToString().Equals("Nombre"))
             {
+                comboBox3.Enabled = false;
                 listView1.Items.Clear();
                 listView1.Items.AddRange(colciencias.castToListItem(colciencias.gruposPorNombre()));
+            }
+            else if (comboBox1.SelectedItem.ToString().Equals("Ciudad"))
+            {
+                comboBox3.Enabled = true;
+                comboBox3.Items.Clear();
+                comboBox3.Items.AddRange(GrupoInvestigacion.CIUDADES);
+                comboBox3.SelectedIndex = 0;
+
+            }
+            else if (comboBox1.SelectedItem.ToString().Equals("Departamento"))
+            {
+                comboBox3.Enabled = true;
+                comboBox3.Items.Clear();
+                comboBox3.Items.AddRange(GrupoInvestigacion.DEPARTAMENTOS);
+                comboBox3.SelectedIndex = 0;
+            }
+            else if (comboBox1.SelectedItem.ToString().Equals("Región"))
+            {
+                comboBox3.Enabled = true;
+                comboBox3.Items.Clear();
+                comboBox3.Items.AddRange(GrupoInvestigacion.REGIONES);
+                comboBox3.SelectedIndex = 0;
+            }else if(comboBox1.SelectedItem.ToString().Equals("Área Investigación"))
+            {
+                comboBox3.Enabled = true;
+                comboBox3.Items.Clear();
+                comboBox3.Items.AddRange(GrupoInvestigacion.AREA);
+                comboBox3.SelectedIndex = 0;
+            }
+            else
+            {
+                comboBox3.Enabled = false;
+                listView1.Items.Clear();
+                listView1.Items.AddRange(colciencias.castToListItem(colciencias.gruposPorCodigo()));
             }
         }
 
@@ -87,6 +125,34 @@ namespace AppMaps
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem.ToString().Equals("Ciudad"))
+            {
+                listView1.Items.Clear();
+                listView1.Items.AddRange(colciencias.castToListItem(colciencias.gruposPorCiudad(comboBox3.SelectedItem.ToString())));
+            }else if (comboBox1.SelectedItem.ToString().Equals("Departamento"))
+            {
+                listView1.Items.Clear();
+                listView1.Items.AddRange(colciencias.castToListItem(colciencias.gruposPorDepartamento(comboBox3.SelectedItem.ToString())));
+            }
+            else if (comboBox1.SelectedItem.ToString().Equals("Región"))
+            {
+                listView1.Items.Clear();
+                listView1.Items.AddRange(colciencias.castToListItem(colciencias.gruposPorRegion(comboBox3.SelectedItem.ToString())));
+            }
+            else if (comboBox1.SelectedItem.ToString().Equals("Área Investigación"))
+            {
+                listView1.Items.Clear();
+                listView1.Items.AddRange(colciencias.castToListItem(colciencias.gruposPorArea(comboBox3.SelectedItem.ToString())));
+            }
+        }
+
+        private void Buscador_Click(object sender, EventArgs e)
         {
 
         }
