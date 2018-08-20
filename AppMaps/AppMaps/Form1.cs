@@ -20,6 +20,7 @@ namespace AppMaps
     {
 
         private Colciencias colciencias;
+        GMapOverlay markers;
 
         public AppGMaps()
         {
@@ -44,15 +45,21 @@ namespace AppMaps
 
         private void cargarMarcadores()
         {
-            GMapOverlay markers = new GMapOverlay("markers");
+            markers = new GMapOverlay("markers");
+            Random r = new Random();
+            double radio = 0.1;
             
             for (int i = 0; i < colciencias.grupos.Count; i++)
             {
                 gmap.SetPositionByKeywords("Colombia, " + colciencias.grupos[i].ciudad);
+                double lat = gmap.Position.Lat-(radio)+(r.NextDouble()*radio*2);
+                double cateto = Math.Sqrt(Math.Pow(radio, 2) - Math.Pow(lat-gmap.Position.Lat, 2));
+                double lng = gmap.Position.Lng - cateto + (r.NextDouble() * cateto*2);
                 GMapMarker marker = new GMarkerGoogle(
-                new PointLatLng(gmap.Position.Lat, gmap.Position.Lng),
+                new PointLatLng(lat,lng),
                 GMarkerGoogleType.blue_pushpin);
                 marker.ToolTipText = colciencias.grupos[i].codigo + "\n" + colciencias.grupos[i].nombre;
+                marker.Tag = colciencias.grupos[i].codigo;
                 markers.Markers.Add(marker);
 
             }
