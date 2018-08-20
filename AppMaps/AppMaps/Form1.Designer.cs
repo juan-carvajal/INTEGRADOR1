@@ -30,9 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMapa = new System.Windows.Forms.TabPage();
+            this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.Buscador = new System.Windows.Forms.TabPage();
             this.Reportes = new System.Windows.Forms.TabPage();
-            this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.tabControl1.SuspendLayout();
             this.TabMapa.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +60,35 @@
             this.TabMapa.UseVisualStyleBackColor = true;
             this.TabMapa.Click += new System.EventHandler(this.TabMapa_Click);
             // 
+            // gmap
+            // 
+            this.gmap.Bearing = 0F;
+            this.gmap.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gmap.CanDragMap = true;
+            this.gmap.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gmap.GrayScaleMode = false;
+            this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gmap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.gmap.LevelsKeepInMemmory = 5;
+            this.gmap.Location = new System.Drawing.Point(0, 0);
+            this.gmap.MarkersEnabled = true;
+            this.gmap.MaxZoom = 20;
+            this.gmap.MinZoom = 2;
+            this.gmap.MouseWheelZoomEnabled = true;
+            this.gmap.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gmap.Name = "gmap";
+            this.gmap.NegativeMode = false;
+            this.gmap.PolygonsEnabled = true;
+            this.gmap.RetryLoadTile = 0;
+            this.gmap.RoutesEnabled = true;
+            this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gmap.ShowTileGridLines = false;
+            this.gmap.Size = new System.Drawing.Size(687, 346);
+            this.gmap.TabIndex = 0;
+            this.gmap.Zoom = 0D;
+            this.gmap.Load += new System.EventHandler(this.gMapControl1_Load);
+            // 
             // Buscador
             // 
             this.Buscador.Location = new System.Drawing.Point(4, 22);
@@ -78,34 +107,6 @@
             this.Reportes.TabIndex = 2;
             this.Reportes.Text = "Reportes";
             this.Reportes.UseVisualStyleBackColor = true;
-            // 
-            // gmap
-            // 
-            this.gmap.Bearing = 0F;
-            this.gmap.CanDragMap = true;
-            this.gmap.EmptyTileColor = System.Drawing.Color.Navy;
-            this.gmap.GrayScaleMode = false;
-            this.gmap.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gmap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gmap.LevelsKeepInMemmory = 5;
-            this.gmap.Location = new System.Drawing.Point(0, 0);
-            this.gmap.MarkersEnabled = true;
-            this.gmap.MaxZoom = 2;
-            this.gmap.MinZoom = 2;
-            this.gmap.MouseWheelZoomEnabled = true;
-            this.gmap.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gmap.Name = "gmap";
-            this.gmap.NegativeMode = false;
-            this.gmap.PolygonsEnabled = true;
-            this.gmap.RetryLoadTile = 0;
-            this.gmap.RoutesEnabled = true;
-            this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(687, 346);
-            this.gmap.TabIndex = 0;
-            this.gmap.Zoom = 0D;
-            this.gmap.Load += new System.EventHandler(this.gMapControl1_Load);
             // 
             // AppGMaps
             // 
