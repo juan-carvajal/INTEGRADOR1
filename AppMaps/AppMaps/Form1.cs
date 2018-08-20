@@ -156,5 +156,41 @@ namespace AppMaps
         {
 
         }
+
+
+
+
+        private void ubicar_Click_1(object sender, EventArgs e)
+        {
+            this.ubicarPin(listView1.SelectedItems[0].Text);
+        }
+
+        private void ubicarPin(String codigo)
+        {
+            Boolean encontrado = false;
+            int cont = 0;
+            while (!encontrado)
+            {
+                if (markers.Markers[cont].Tag.Equals(codigo))
+                {
+                    gmap.Position = markers.Markers[cont].Position;
+                    gmap.Zoom = 15;
+                    tabControl1.SelectTab(0);
+                    gmap.Refresh();
+                    encontrado = true;
+                }
+                else
+                {
+                    if (cont >= markers.Markers.Count)
+                    {
+                        MessageBox.Show("El marcador no ha sido encontrado");
+                        encontrado = true;
+                    }
+                    cont++;
+                }
+            }
+        }
+
+
     }
 }
