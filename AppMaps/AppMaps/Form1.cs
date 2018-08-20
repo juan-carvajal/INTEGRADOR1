@@ -59,5 +59,10 @@ namespace AppMaps
             gmap.Overlays.Add(markers);
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
