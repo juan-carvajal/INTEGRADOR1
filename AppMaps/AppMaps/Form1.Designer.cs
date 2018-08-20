@@ -46,7 +46,6 @@
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
             this.Buscador = new System.Windows.Forms.TabPage();
             this.Reportes = new System.Windows.Forms.TabPage();
-<<<<<<< HEAD
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -56,8 +55,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-=======
->>>>>>> 12c40a203835cd055dd95d439c94a4b16f931636
             this.tabControl1.SuspendLayout();
             this.TabMapa.SuspendLayout();
             this.Buscador.SuspendLayout();
@@ -119,14 +116,11 @@
             // 
             // Buscador
             // 
-<<<<<<< HEAD
             this.Buscador.Controls.Add(this.listView1);
             this.Buscador.Controls.Add(this.button1);
             this.Buscador.Controls.Add(this.textBox1);
             this.Buscador.Controls.Add(this.comboBox1);
             this.Buscador.Controls.Add(this.label1);
-=======
->>>>>>> 12c40a203835cd055dd95d439c94a4b16f931636
             this.Buscador.Location = new System.Drawing.Point(4, 22);
             this.Buscador.Name = "Buscador";
             this.Buscador.Padding = new System.Windows.Forms.Padding(3);
@@ -137,13 +131,10 @@
             // 
             // Reportes
             // 
-<<<<<<< HEAD
             this.Reportes.Controls.Add(this.chart1);
             this.Reportes.Controls.Add(this.textBox2);
             this.Reportes.Controls.Add(this.comboBox2);
             this.Reportes.Controls.Add(this.label2);
-=======
->>>>>>> 12c40a203835cd055dd95d439c94a4b16f931636
             this.Reportes.Location = new System.Drawing.Point(4, 22);
             this.Reportes.Name = "Reportes";
             this.Reportes.Size = new System.Drawing.Size(687, 346);
@@ -151,7 +142,6 @@
             this.Reportes.Text = "Reportes";
             this.Reportes.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD
             // label1
             // 
             this.label1.AutoSize = true;
@@ -265,8 +255,6 @@
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
             // 
-=======
->>>>>>> 12c40a203835cd055dd95d439c94a4b16f931636
             // AppGMaps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
