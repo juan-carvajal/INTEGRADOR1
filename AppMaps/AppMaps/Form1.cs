@@ -93,7 +93,7 @@ namespace AppMaps
 
         private void ubicar_Click(object sender, EventArgs e)
         {
-            this.ubicarPin(listView1.GetItemAt(listView1.SelectedIndices[0], 0).Text);
+            this.ubicarPin(listView1.SelectedItems[0].Text);
         }
 
         private void ubicarPin(String codigo)
@@ -105,8 +105,8 @@ namespace AppMaps
                 if (markers.Markers[cont].Tag.Equals(codigo))
                 {
                     gmap.Position = markers.Markers[cont].Position;
-                    gmap.Zoom = 10;
-                    tabControl1.SelectTab(1);
+                    gmap.Zoom = 15;
+                    tabControl1.SelectTab(0);
                     gmap.Refresh();
                     encontrado = true;
                 }
