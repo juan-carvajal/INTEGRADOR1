@@ -64,5 +64,24 @@ namespace AppMaps
         {
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem.ToString().Equals("Nombre"))
+            {
+                listView1.Items.Clear();
+                listView1.Items.AddRange(colciencias.castToListItem(colciencias.gruposPorNombre()));
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,13 @@ namespace AppMaps.modelo
     class GrupoInvestigacion
     {
 
+
+        public static String[] CIUDADES = File.ReadAllLines("data/CIUDADES.txt");
+        public static String[] AREA = File.ReadAllLines("data/AREAS.txt");
+        public static String[] DEPARTAMENTOS = File.ReadAllLines("data/DEPARTAMENTOS.txt");
+        public static String[] REGIONES = File.ReadAllLines("data/REGIONES.txt");
+        public static String[] FILTROS = { "Ciudad","Nombre", "Region", "Departamento", "Area", "Codigo" };
+        
 
         public String codigo;
         public String nombre;

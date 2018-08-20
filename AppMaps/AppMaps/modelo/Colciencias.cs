@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AppMaps.modelo
 {
@@ -11,6 +12,47 @@ namespace AppMaps.modelo
     {
 
         public List<GrupoInvestigacion> grupos;
+
+
+
+        public List<GrupoInvestigacion> gruposPorNombre()
+        {
+            return grupos.Select(i => i).OrderBy(i => i.nombre).ToList();
+        }
+
+
+        public List<GrupoInvestigacion> gruposPorCodigo()
+        {
+            return grupos.Select(i => i).OrderBy(i => i.codigo).ToList();
+        }
+
+        public List<GrupoInvestigacion> gruposPorCiudad(String city)
+        {
+            return grupos.Select(i => i).Where(i=> i.ciudad.Equals(city)).OrderBy(i => i.codigo).ToList();
+        }
+
+        public List<GrupoInvestigacion> gruposPorDepartamento(String dpto)
+        {
+            return grupos.Select(i => i).Where(i => i.departamento.Equals(dpto)).OrderBy(i => i.codigo).ToList();
+        }
+
+
+        public List<GrupoInvestigacion> gruposPorArea(String a)
+        {
+            return grupos.Select(i => i).Where(i => i.area.Equals(a)).OrderBy(i => i.codigo).ToList();
+        }
+
+        public List<GrupoInvestigacion> gruposPorRegion(String reg)
+        {
+            return grupos.Select(i => i).Where(i => i.regional.Equals(reg)).OrderBy(i => i.codigo).ToList();
+        }
+
+
+        public ListViewItem[] castToListItem(List<GrupoInvestigacion> lista)
+        {
+            return lista.Select(i => { ListViewItem lvi = new ListViewItem(i.codigo); lvi.SubItems.Add(i.nombre); lvi.SubItems.Add(i.ciudad + "-" + i.departamento); return lvi; }).ToArray();
+        }
+
 
 
 
