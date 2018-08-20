@@ -20,7 +20,7 @@ namespace AppMaps.modelo
         public String area;
         public int edad;
 
-        public GrupoInvestigacion(string codigo, string nombre, DateTime fechaCreacion, string ciudad, string departamento, string pais, string regional, string area, int edad)
+        public GrupoInvestigacion(string codigo, string nombre, DateTime fechaCreacion, string ciudad, string departamento, string pais, string regional, string area)
         {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -30,7 +30,7 @@ namespace AppMaps.modelo
             this.pais = pais;
             this.regional = regional;
             this.area = area;
-            this.edad = edad;
+            this.edad = DateTime.Now.Year-fechaCreacion.Year;
         }
     }
 }
