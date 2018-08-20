@@ -47,7 +47,7 @@ namespace AppMaps.modelo
             {
                 if (line[0] != '*')
                 {
-                    var info = line.Split('\t');
+                    var info = line.Split('-');
                     Console.WriteLine(info[0]);
                     String []fecha = info[2].Split('/');
                 
