@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMapa = new System.Windows.Forms.TabPage();
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
@@ -65,7 +65,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(695, 372);
+            this.tabControl1.Size = new System.Drawing.Size(775, 372);
             this.tabControl1.TabIndex = 0;
             // 
             // TabMapa
@@ -74,7 +74,7 @@
             this.TabMapa.Location = new System.Drawing.Point(4, 22);
             this.TabMapa.Name = "TabMapa";
             this.TabMapa.Padding = new System.Windows.Forms.Padding(3);
-            this.TabMapa.Size = new System.Drawing.Size(687, 346);
+            this.TabMapa.Size = new System.Drawing.Size(767, 346);
             this.TabMapa.TabIndex = 0;
             this.TabMapa.Text = "Mapa";
             this.TabMapa.UseVisualStyleBackColor = true;
@@ -104,7 +104,7 @@
             this.gmap.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gmap.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmap.ShowTileGridLines = false;
-            this.gmap.Size = new System.Drawing.Size(687, 346);
+            this.gmap.Size = new System.Drawing.Size(767, 346);
             this.gmap.TabIndex = 0;
             this.gmap.Zoom = 0D;
             this.gmap.Load += new System.EventHandler(this.gMapControl1_Load);
@@ -121,7 +121,7 @@
             this.Buscador.Location = new System.Drawing.Point(4, 22);
             this.Buscador.Name = "Buscador";
             this.Buscador.Padding = new System.Windows.Forms.Padding(3);
-            this.Buscador.Size = new System.Drawing.Size(687, 346);
+            this.Buscador.Size = new System.Drawing.Size(767, 346);
             this.Buscador.TabIndex = 1;
             this.Buscador.Text = "Navegar";
             this.Buscador.UseVisualStyleBackColor = true;
@@ -139,7 +139,7 @@
             this.listView1.Location = new System.Drawing.Point(84, 80);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(521, 196);
+            this.listView1.Size = new System.Drawing.Size(633, 196);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -198,16 +198,16 @@
             // 
             // chart1
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chart1.Legends.Add(legend5);
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(107, 73);
             this.chart1.Name = "chart1";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chart1.Series.Add(series5);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(463, 270);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
@@ -295,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 396);
+            this.ClientSize = new System.Drawing.Size(799, 396);
             this.Controls.Add(this.tabControl1);
             this.Name = "AppGMaps";
             this.Text = "Grupos de Investigacion";
