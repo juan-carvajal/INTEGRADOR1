@@ -270,9 +270,11 @@ namespace AppMaps
                 }
                 
             }
-            gmap.Zoom = 15;
-            tabControl1.SelectTab(0);
+            gmap.Position = new GMap.NET.PointLatLng(4.703568, -74.161406);
+            gmap.Zoom = 5;
             gmap.Refresh();
+            tabControl1.SelectTab(0);
+            
 
 
         }
