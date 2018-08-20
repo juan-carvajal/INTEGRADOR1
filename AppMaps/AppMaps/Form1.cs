@@ -23,8 +23,8 @@ namespace AppMaps
 
         public AppGMaps()
         {
-            InitializeComponent();
             colciencias = new Colciencias();
+            InitializeComponent();
         }
 
         private void TabMapa_Click(object sender, EventArgs e)
