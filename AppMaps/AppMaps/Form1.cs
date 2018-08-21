@@ -397,80 +397,87 @@ namespace AppMaps
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Series serie = new Series();
-            if (comboBox2.SelectedItem.ToString().Equals("Ciudad"))
+            Dictionary<String, int> grafico = new Dictionary<string, int>();
+            if (comboBox2.SelectedItem.ToString().Equals("Area"))
             {
-                
-                String[] series = GrupoInvestigacion.CIUDADES;
-                List<int> puntos = new List<int>();
-                foreach (string x in series)
+                string[] x = GrupoInvestigacion.AREA;
+
+                foreach (string item in x)
                 {
-
-
-                    puntos.Add( colciencias.gruposPorCiudad(x).Count());
-
-                }
-                
-                for (int i = 0; i < series.Length; i++)
-                {
-                     serie = chart1.Series.Add(series[i]);
-                    serie.Label = puntos[i].ToString();
-                    serie.Points.Add(puntos[i]);
-
+                    Console.WriteLine(item);
+                    grafico.Add(item, colciencias.gruposPorArea(item).Count);
                 }
 
-               
-               
+
+                chart1.Series[0].Points.Clear();
+                chart1.ChartAreas.FirstOrDefault().AxisX.Interval = 1;
+                chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+                chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
+                int count2 = 0;
+                Random rand = new Random();
+                foreach (string y in grafico.Keys)
+                {
+                    chart1.Series[0].Points.AddXY(y, grafico[y]);
+                    int r = rand.Next(0, 255);
+                    int g = rand.Next(0, 255);
+                    int b = rand.Next(0, 255);
+                    chart1.Series[0].Points[count2].Color = Color.FromArgb(255, r, g, b);
+                    count2++;
+                }
+
             }
             else if (comboBox2.SelectedItem.ToString().Equals("Departamento"))
             {
-                chart1.Series.Clear();
-                
-                
-                String[] series = GrupoInvestigacion.DEPARTAMENTOS;
-                List<int> puntos = new List<int>();
-                foreach (string x in series)
+                string[] x = GrupoInvestigacion.DEPARTAMENTOS;
+
+                foreach (string item in x)
                 {
-
-
-                    puntos.Add(colciencias.gruposPorDepartamento(x).Count());
-
+                    grafico.Add(item, colciencias.gruposPorDepartamento(item).Count);
                 }
 
-                for (int i = 0; i < series.Length; i++)
+
+                chart1.Series[0].Points.Clear();
+                chart1.ChartAreas.FirstOrDefault().AxisX.Interval = 1;
+                chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+                chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
+                int count2 = 0;
+                Random rand = new Random();
+                foreach (string y in grafico.Keys)
                 {
-                     serie = chart1.Series.Add(series[i]);
-                    serie.Label = puntos[i].ToString();
-                    serie.Points.Add(puntos[i]);
-
+                    chart1.Series[0].Points.AddXY(y, grafico[y]);
+                    int r = rand.Next(0, 255);
+                    int g = rand.Next(0, 255);
+                    int b = rand.Next(0, 255);
+                    chart1.Series[0].Points[count2].Color = Color.FromArgb(255, r, g, b);
+                    count2++;
                 }
-
-                
-
             }
             else if (comboBox2.SelectedItem.ToString().Equals("Región"))
             {
-                chart1.Series.Clear();
-                
-                
-                String[] series = GrupoInvestigacion.REGIONES;
-                List<int> puntos = new List<int>();
-                foreach (string x in series)
+                string[] x = GrupoInvestigacion.REGIONES;
+
+                foreach (string item in x)
                 {
-
-
-                    puntos.Add(colciencias.gruposPorRegion(x).Count());
-
+                    grafico.Add(item, colciencias.gruposPorRegion(item).Count);
                 }
 
-                for (int i = 0; i < series.Length; i++)
-                {
-                     serie = chart1.Series.Add(series[i]);
-                    serie.Label = puntos[i].ToString();
-                    serie.Points.Add(puntos[i]);
 
+                chart1.Series[0].Points.Clear();
+                chart1.ChartAreas.FirstOrDefault().AxisX.Interval = 1;
+                chart1.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+                chart1.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
+                int count2 = 0;
+                Random rand = new Random();
+                foreach (string y in grafico.Keys)
+                {
+                    chart1.Series[0].Points.AddXY(y, grafico[y]);
+                    int r = rand.Next(0, 255);
+                    int g = rand.Next(0, 255);
+                    int b = rand.Next(0, 255);
+                    chart1.Series[0].Points[count2].Color = Color.FromArgb(255, r, g, b);
+                    count2++;
                 }
-                
+
             }
           /*  else if (comboBox2.SelectedItem.ToString().Equals("Área Investigación"))
             {
@@ -506,6 +513,11 @@ namespace AppMaps
                 chart1.Series.Clear();
                 MessageBox.Show("Seleccione un campo");
             }
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
