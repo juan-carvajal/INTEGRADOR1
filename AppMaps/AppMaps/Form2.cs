@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppMaps.modelo;
+using System.IO;
 
 namespace AppMaps
 {
@@ -20,14 +21,15 @@ namespace AppMaps
         {
             colciencias = c;
             InitializeComponent();
-            comboBox1.Items.AddRange(GrupoInvestigacion.CIUDADES);
-            comboBox2.Items.AddRange(GrupoInvestigacion.DEPARTAMENTOS);
-            comboBox4.Items.AddRange(GrupoInvestigacion.REGIONES);
-            comboBox5.Items.AddRange(GrupoInvestigacion.AREA);
+            ciudad.Items.AddRange(GrupoInvestigacion.CIUDADES);
+            dpto.Items.AddRange(GrupoInvestigacion.DEPARTAMENTOS);
+            region.Items.AddRange(GrupoInvestigacion.REGIONES);
+            area.Items.AddRange(GrupoInvestigacion.AREA);
             String[] paises = { "Colombia" };
-            comboBox3.Items.AddRange(paises);
-            comboBox3.SelectedIndex = 0;
-            comboBox3.Enabled = false;
+            pais.Items.AddRange(paises);
+            pais.SelectedIndex = 0;
+            pais.Enabled = false;
+            this.Visible = true;
         }
 
 
@@ -43,7 +45,20 @@ namespace AppMaps
 
         private void button1_Click(object sender, EventArgs e)
         {
+            GrupoInvestigacion gi = new GrupoInvestigacion(codigo.Text, nombre.Text, fecha.SelectionStart, ciudad.Text, dpto.Text, pais.Text, region.Text, area.Text);
+            colciencias.grupos.Add(gi);
+            String grabar = "\r\n"+gi.ToString();
+            String path =Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Colciencias-GruposInvestigacion", "GRUPOS.txt");
+            if (File.Exists(path))
+            {
+                File.AppendAllText(path, grabar);
 
+            }
+            else
+            {
+                MessageBox.Show("No se ha encontrado el archivo de datos, reinicie la aplicacion.");
+            }
+            this.Dispose();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

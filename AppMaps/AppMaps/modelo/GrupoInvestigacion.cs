@@ -40,5 +40,10 @@ namespace AppMaps.modelo
             this.area = area;
             this.edad = DateTime.Now.Year-fechaCreacion.Year;
         }
+
+        public string ToString()
+        {
+            return codigo + "\t" + nombre + "\t" + fechaCreacion.Day + "/" + fechaCreacion.Month + "/" + fechaCreacion.Year + "\t" + ciudad + "\t" + departamento + "\t" + pais + "\t" + regional + "\t" + area;
+        }
     }
 }

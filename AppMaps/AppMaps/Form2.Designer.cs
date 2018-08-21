@@ -37,14 +37,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.codigo = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.TextBox();
+            this.fecha = new System.Windows.Forms.MonthCalendar();
+            this.ciudad = new System.Windows.Forms.ComboBox();
+            this.dpto = new System.Windows.Forms.ComboBox();
+            this.pais = new System.Windows.Forms.ComboBox();
+            this.region = new System.Windows.Forms.ComboBox();
+            this.area = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -138,73 +138,73 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Area:";
             // 
-            // textBox1
+            // codigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(195, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(248, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.codigo.Location = new System.Drawing.Point(195, 23);
+            this.codigo.Name = "codigo";
+            this.codigo.Size = new System.Drawing.Size(248, 20);
+            this.codigo.TabIndex = 9;
+            this.codigo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // nombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(195, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(248, 20);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.nombre.Location = new System.Drawing.Point(195, 62);
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(248, 20);
+            this.nombre.TabIndex = 10;
+            this.nombre.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // monthCalendar1
+            // fecha
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(195, 102);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 11;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
+            this.fecha.Location = new System.Drawing.Point(195, 102);
+            this.fecha.Name = "fecha";
+            this.fecha.TabIndex = 11;
+            this.fecha.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
-            // comboBox1
+            // ciudad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(195, 283);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(248, 21);
-            this.comboBox1.TabIndex = 12;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.ciudad.FormattingEnabled = true;
+            this.ciudad.Location = new System.Drawing.Point(195, 283);
+            this.ciudad.Name = "ciudad";
+            this.ciudad.Size = new System.Drawing.Size(248, 21);
+            this.ciudad.TabIndex = 12;
+            this.ciudad.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // dpto
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(195, 313);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(248, 21);
-            this.comboBox2.TabIndex = 13;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.dpto.FormattingEnabled = true;
+            this.dpto.Location = new System.Drawing.Point(195, 313);
+            this.dpto.Name = "dpto";
+            this.dpto.Size = new System.Drawing.Size(248, 21);
+            this.dpto.TabIndex = 13;
+            this.dpto.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox3
+            // pais
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(195, 344);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(248, 21);
-            this.comboBox3.TabIndex = 14;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.pais.FormattingEnabled = true;
+            this.pais.Location = new System.Drawing.Point(195, 344);
+            this.pais.Name = "pais";
+            this.pais.Size = new System.Drawing.Size(248, 21);
+            this.pais.TabIndex = 14;
+            this.pais.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // comboBox4
+            // region
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(195, 373);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(248, 21);
-            this.comboBox4.TabIndex = 15;
-            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.region.FormattingEnabled = true;
+            this.region.Location = new System.Drawing.Point(195, 373);
+            this.region.Name = "region";
+            this.region.Size = new System.Drawing.Size(248, 21);
+            this.region.TabIndex = 15;
+            this.region.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
-            // comboBox5
+            // area
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(195, 403);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(248, 21);
-            this.comboBox5.TabIndex = 16;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.area.FormattingEnabled = true;
+            this.area.Location = new System.Drawing.Point(195, 403);
+            this.area.Name = "area";
+            this.area.Size = new System.Drawing.Size(248, 21);
+            this.area.TabIndex = 16;
+            this.area.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -223,14 +223,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(473, 482);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.area);
+            this.Controls.Add(this.region);
+            this.Controls.Add(this.pais);
+            this.Controls.Add(this.dpto);
+            this.Controls.Add(this.ciudad);
+            this.Controls.Add(this.fecha);
+            this.Controls.Add(this.nombre);
+            this.Controls.Add(this.codigo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -259,14 +259,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.TextBox codigo;
+        private System.Windows.Forms.TextBox nombre;
+        private System.Windows.Forms.MonthCalendar fecha;
+        private System.Windows.Forms.ComboBox ciudad;
+        private System.Windows.Forms.ComboBox dpto;
+        private System.Windows.Forms.ComboBox pais;
+        private System.Windows.Forms.ComboBox region;
+        private System.Windows.Forms.ComboBox area;
         private System.Windows.Forms.Button button1;
     }
 }

@@ -374,5 +374,10 @@ namespace AppMaps
 
             cambiarColorArticulos(par);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Form2(colciencias);
+        }
     }
 }
