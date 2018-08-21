@@ -12,6 +12,7 @@ using GMap.NET;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.MapProviders;
+using System.IO;
 
 namespace AppMaps
 {
@@ -188,6 +189,58 @@ namespace AppMaps
                     }
                     cont++;
                 }
+            }
+        }
+
+
+
+
+        private void calcular_Click(object sender, EventArgs e)
+        {
+            String[] lineas = File.ReadAllLines("data/ARTICULOS.txt");
+            Dictionary<String, int> values = new Dictionary<String, int>();
+
+
+
+                int count = 0;
+            for (int i = 0; i < lineas.Length; i++)
+            {
+
+                string[] articulos = lineas[i].Trim().Split(':')[1].Split(' ');
+                for (int j = 0; j < articulos.Length; j++)
+                {
+                    for(int x=j+1; x<articulos.Length; x++)
+                    {
+                        if (values.ContainsKey(articulos[j] + "-" + articulos[x]))
+                        {
+                            values[articulos[j] + "-" + articulos[x]]++;
+                            count++;
+                        }
+                        else
+                        {
+                            if (values.ContainsKey(articulos[x] + "-" + articulos[j]))
+                            {
+                                values[articulos[x] + "-" + articulos[j]]++;
+                                count++;
+                            }
+                            else
+                            {
+                                values.Add(articulos[j] + "-"+ articulos[x], 1);
+                                count++;
+                            }
+                        }
+                    }
+                }
+            }
+            Console.Write(count);
+            var top10 = values.OrderByDescending(i => i.Value)/*.Take(20)*/.ToList();
+            listView2.Items.Clear();
+            for (int i = 0; i < top10.Count; i++)
+            {
+                ListViewItem lvi = new ListViewItem(top10[i].Key + "");
+                lvi.SubItems.Add(top10[i].Value + "");
+                lvi.SubItems.Add((top10[i].Value/(double) count).ToString("P4"));
+                listView2.Items.Add(lvi);
             }
         }
 

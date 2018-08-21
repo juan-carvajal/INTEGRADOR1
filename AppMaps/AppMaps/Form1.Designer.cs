@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMapa = new System.Windows.Forms.TabPage();
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
@@ -50,11 +50,18 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.ubicar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.DataMining = new System.Windows.Forms.TabPage();
+            this.calcular = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.Combinacion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FrecuenciaAbsoluta = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FrecuenciaRelativa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.TabMapa.SuspendLayout();
             this.Buscador.SuspendLayout();
             this.Reportes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.DataMining.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -62,6 +69,7 @@
             this.tabControl1.Controls.Add(this.TabMapa);
             this.tabControl1.Controls.Add(this.Buscador);
             this.tabControl1.Controls.Add(this.Reportes);
+            this.tabControl1.Controls.Add(this.DataMining);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -191,23 +199,23 @@
             this.Reportes.Controls.Add(this.label2);
             this.Reportes.Location = new System.Drawing.Point(4, 22);
             this.Reportes.Name = "Reportes";
-            this.Reportes.Size = new System.Drawing.Size(687, 346);
+            this.Reportes.Size = new System.Drawing.Size(767, 346);
             this.Reportes.TabIndex = 2;
             this.Reportes.Text = "Reportes";
             this.Reportes.UseVisualStyleBackColor = true;
             // 
             // chart1
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(107, 73);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(463, 270);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
@@ -252,12 +260,12 @@
             // Nombre
             // 
             this.Nombre.Text = "Nombre";
-            this.Nombre.Width = 306;
+            this.Nombre.Width = 354;
             // 
             // Ubicacion
             // 
             this.Ubicacion.Text = "Ubicacion";
-            this.Ubicacion.Width = 97;
+            this.Ubicacion.Width = 202;
             // 
             // comboBox3
             // 
@@ -291,6 +299,58 @@
             this.label3.Text = "Opciones:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // DataMining
+            // 
+            this.DataMining.Controls.Add(this.listView2);
+            this.DataMining.Controls.Add(this.calcular);
+            this.DataMining.Location = new System.Drawing.Point(4, 22);
+            this.DataMining.Name = "DataMining";
+            this.DataMining.Size = new System.Drawing.Size(767, 346);
+            this.DataMining.TabIndex = 3;
+            this.DataMining.Text = "Data Mining";
+            this.DataMining.UseVisualStyleBackColor = true;
+            // 
+            // calcular
+            // 
+            this.calcular.Location = new System.Drawing.Point(346, 320);
+            this.calcular.Name = "calcular";
+            this.calcular.Size = new System.Drawing.Size(75, 23);
+            this.calcular.TabIndex = 0;
+            this.calcular.Text = "Calcular";
+            this.calcular.UseVisualStyleBackColor = true;
+            this.calcular.Click += new System.EventHandler(this.calcular_Click);
+            // 
+            // listView2
+            // 
+            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Combinacion,
+            this.FrecuenciaAbsoluta,
+            this.FrecuenciaRelativa});
+            this.listView2.FullRowSelect = true;
+            this.listView2.GridLines = true;
+            this.listView2.Location = new System.Drawing.Point(3, 3);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(761, 311);
+            this.listView2.TabIndex = 1;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.Details;
+          
+            // 
+            // Combinacion
+            // 
+            this.Combinacion.Text = "Combinacion";
+            this.Combinacion.Width = 259;
+            // 
+            // FrecuenciaAbsoluta
+            // 
+            this.FrecuenciaAbsoluta.Text = "Frecuencia Absoluta";
+            this.FrecuenciaAbsoluta.Width = 278;
+            // 
+            // FrecuenciaRelativa
+            // 
+            this.FrecuenciaRelativa.Text = "Frecuencia Relativa";
+            this.FrecuenciaRelativa.Width = 231;
+            // 
             // AppGMaps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +366,7 @@
             this.Reportes.ResumeLayout(false);
             this.Reportes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.DataMining.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -331,6 +392,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button ubicar;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TabPage DataMining;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ColumnHeader Combinacion;
+        private System.Windows.Forms.ColumnHeader FrecuenciaAbsoluta;
+        private System.Windows.Forms.ColumnHeader FrecuenciaRelativa;
+        private System.Windows.Forms.Button calcular;
     }
 }
 
