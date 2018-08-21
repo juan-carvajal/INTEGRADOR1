@@ -33,6 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AppGMaps));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabMapa = new System.Windows.Forms.TabPage();
             this.gmap = new GMap.NET.WindowsForms.GMapControl();
@@ -261,6 +262,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Location = new System.Drawing.Point(3, 73);
             this.chart1.Name = "chart1";
+            series1.BorderColor = System.Drawing.Color.Black;
             series1.ChartArea = "ChartArea1";
             series1.IsValueShownAsLabel = true;
             series1.IsVisibleInLegend = false;
@@ -387,6 +389,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 396);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AppGMaps";
             this.Text = "Grupos de Investigacion";
             this.tabControl1.ResumeLayout(false);
