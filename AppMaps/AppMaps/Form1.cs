@@ -320,7 +320,7 @@ namespace AppMaps
                 }
             }
             Console.Write(count);
-            var top10 = values.OrderByDescending(i => i.Value)/*.Take(20)*/.ToList();
+            var top10 = values.OrderByDescending(i => i.Value).Take(10).ToList();
             listView2.Items.Clear();
             for (int i = 0; i < top10.Count; i++)
             {
@@ -329,8 +329,36 @@ namespace AppMaps
                 lvi.SubItems.Add((top10[i].Value/(double) count).ToString("P4"));
                 listView2.Items.Add(lvi);
             }
+
+            Dictionary<String, double> grafico = new Dictionary<string, double>();
+            double acumulador = 0;
+            for(int i=0; i<top10.Count; i++)
+            {
+                acumulador += (top10[i].Value / (double)count);
+                grafico.Add(top10[i].Key, (top10[i].Value));
+            }
+            //grafico.Add("Otros", 1-acumulador);
+            chart2.Enabled = true;
+            chart2.Series[0].Points.Clear();
+            chart2.ChartAreas.FirstOrDefault().AxisX.Interval = 1;
+            chart2.ChartAreas[0].AxisX.MajorGrid.LineWidth = 0;
+            chart2.ChartAreas[0].AxisY.MajorGrid.LineWidth = 0;
+            int count2 = 0;
+            Random rand = new Random();
+            foreach (string x in grafico.Keys)
+            {
+                chart2.Series[0].Points.AddXY(x, grafico[x]);
+                int r = rand.Next(0, 255);
+                int g = rand.Next(0, 255);
+                int b = rand.Next(0, 255);
+                chart2.Series[0].Points[count2].Color = Color.FromArgb(255,r,g, b);
+                    count2++;
+            }
         }
 
+        private void chart2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
