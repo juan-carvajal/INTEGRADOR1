@@ -373,6 +373,9 @@ namespace AppMaps
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+
             String parS=listView2.SelectedItems[0].Text;
             int p1 = Int32.Parse(parS.Split('-')[0]);
             int p2 = Int32.Parse(parS.Split('-')[1]);
@@ -380,6 +383,11 @@ namespace AppMaps
 
 
             cambiarColorArticulos(par);
+            }
+            catch
+            {
+                MessageBox.Show("Se debe seleccionar una opcion.");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
