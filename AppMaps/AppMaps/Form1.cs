@@ -202,8 +202,12 @@ namespace AppMaps
 
         private void cambiarColorArticulos(KeyValuePair<int,int> par)
         {
+            GMapOverlay selec = new GMapOverlay("selec");
+            gmap.Overlays.Clear();
+            this.cargarMarcadores();
             int uno = par.Key;
             int dos = par.Value;
+
 
             List<String> elegidos=new List<string>();
 
@@ -245,9 +249,10 @@ namespace AppMaps
                 linea = sr.ReadLine();
             }
             sr.Close();
+            
             for (int i = 0; i < elegidos.Count; i++)
             {
-                Boolean encontrado = true;
+                Boolean encontrado = false;
                 int cont = 0;
                 try
                 {
@@ -255,11 +260,12 @@ namespace AppMaps
                     {
                         if (markers.Markers[cont].Tag.Equals(elegidos[i]))
                         {
-                            GMapMarker nuevo = new GMarkerGoogle(markers.Markers[cont].Position, GMarkerGoogleType.green_pushpin);
+                            GMapMarker nuevo = new GMarkerGoogle(markers.Markers[cont].Position, GMarkerGoogleType.red_pushpin);
                             nuevo.Tag = markers.Markers[cont].Tag;
                             nuevo.ToolTipText = markers.Markers[cont].ToolTipText;
-                            markers.Markers[cont] = nuevo;
+                            selec.Markers.Add(nuevo);
                             encontrado = true;
+                            
                         }
                         cont++;
                         
@@ -274,7 +280,7 @@ namespace AppMaps
             }
             gmap.Position = new GMap.NET.PointLatLng(4.703568, -74.161406);
             gmap.Zoom = 5;
-            gmap.Overlays.Add(markers);
+            gmap.Overlays.Add(selec);
             gmap.Refresh();
             tabControl1.SelectTab(0);
             
