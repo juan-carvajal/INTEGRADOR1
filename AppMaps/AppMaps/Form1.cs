@@ -13,6 +13,7 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using GMap.NET.MapProviders;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace AppMaps
 {
@@ -384,6 +385,119 @@ namespace AppMaps
         private void button1_Click(object sender, EventArgs e)
         {
             new Form2(colciencias);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Series serie = new Series();
+            if (comboBox2.SelectedItem.ToString().Equals("Ciudad"))
+            {
+                
+                String[] series = GrupoInvestigacion.CIUDADES;
+                List<int> puntos = new List<int>();
+                foreach (string x in series)
+                {
+
+
+                    puntos.Add( colciencias.gruposPorCiudad(x).Count());
+
+                }
+                
+                for (int i = 0; i < series.Length; i++)
+                {
+                     serie = chart1.Series.Add(series[i]);
+                    serie.Label = puntos[i].ToString();
+                    serie.Points.Add(puntos[i]);
+
+                }
+
+               
+               
+            }
+            else if (comboBox2.SelectedItem.ToString().Equals("Departamento"))
+            {
+                chart1.Series.Clear();
+                
+                
+                String[] series = GrupoInvestigacion.DEPARTAMENTOS;
+                List<int> puntos = new List<int>();
+                foreach (string x in series)
+                {
+
+
+                    puntos.Add(colciencias.gruposPorDepartamento(x).Count());
+
+                }
+
+                for (int i = 0; i < series.Length; i++)
+                {
+                     serie = chart1.Series.Add(series[i]);
+                    serie.Label = puntos[i].ToString();
+                    serie.Points.Add(puntos[i]);
+
+                }
+
+                
+
+            }
+            else if (comboBox2.SelectedItem.ToString().Equals("Región"))
+            {
+                chart1.Series.Clear();
+                
+                
+                String[] series = GrupoInvestigacion.REGIONES;
+                List<int> puntos = new List<int>();
+                foreach (string x in series)
+                {
+
+
+                    puntos.Add(colciencias.gruposPorRegion(x).Count());
+
+                }
+
+                for (int i = 0; i < series.Length; i++)
+                {
+                     serie = chart1.Series.Add(series[i]);
+                    serie.Label = puntos[i].ToString();
+                    serie.Points.Add(puntos[i]);
+
+                }
+                
+            }
+          /*  else if (comboBox2.SelectedItem.ToString().Equals("Área Investigación"))
+            {
+                chart1.Series.Clear();
+                chart1.Series.Clear();
+                
+                
+               
+                String[] series = GrupoInvestigacion.AREA;
+                List<int> puntos = new List<int>();
+                foreach (string x in series)
+                {
+
+
+                    puntos.Add(colciencias.gruposPorArea(x).Count());
+
+                }
+
+                for (int i = 0; i < series.Length; i++)
+                {
+                    serie = chart1.Series.Add(series[i]);
+                    serie.Label = puntos[i].ToString();
+                    serie.Points.Add(puntos[i]);
+
+                }
+
+
+            }
+            */
+           
+            else
+            {
+                chart1.Series.Clear();
+                MessageBox.Show("Seleccione un campo");
+            }
         }
     }
 }
