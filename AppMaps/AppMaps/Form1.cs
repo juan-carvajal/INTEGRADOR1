@@ -163,7 +163,15 @@ namespace AppMaps
 
         private void ubicar_Click_1(object sender, EventArgs e)
         {
-            this.ubicarPin(listView1.SelectedItems[0].Text);
+            try
+            {
+                this.ubicarPin(listView1.SelectedItems[0].Text);
+            }
+            catch
+            {
+                MessageBox.Show("No hay ningún elemento seleccionado");
+            }
+            
         }
 
         private void ubicarPin(String codigo)
@@ -190,6 +198,85 @@ namespace AppMaps
                     cont++;
                 }
             }
+        }
+
+        private void cambiarColorArticulos(KeyValuePair<int,int> par)
+        {
+            int uno = par.Key;
+            int dos = par.Value;
+
+            List<String> elegidos=new List<string>();
+
+            StreamReader sr = new StreamReader("/data/ARTICULOS.txt");
+            String linea = sr.ReadLine();
+
+            while (linea != null)
+            {
+                String[] splt = linea.Split(':');
+                String cod = splt[0];
+                String[] arts = splt[1].Split(' ');
+
+                Boolean artuno = false;
+                Boolean artdos = false;
+                int contuno = 0;
+                int contdos = 0;
+                while (!artuno && contuno < arts.Length)
+                {
+                    if (int.Parse(arts[contuno]) == uno)
+                    {
+                        artuno = true;
+                    }
+                    contuno++;
+                }
+                while (artuno&&!artdos&&contdos<arts.Length)
+                {
+                    if(int.Parse(arts[contuno]) == dos)
+                    {
+                        artdos = true;
+
+                    }
+                    contdos++;
+                }
+                if (artuno && artdos)
+                {
+                    elegidos.Add(cod);
+                }
+            }
+            
+            for (int i = 0; i < elegidos.Count; i++)
+            {
+                Boolean encontrado = true;
+                int cont = 0;
+                try
+                {
+                    while (!encontrado&&cont<markers.Markers.Count)
+                    {
+                        if (markers.Markers[cont].Tag.Equals(elegidos[i]))
+                        {
+                            GMapMarker nuevo = new GMarkerGoogle(markers.Markers[cont].Position, GMarkerGoogleType.green_pushpin);
+                            nuevo.Tag = markers.Markers[cont].Tag;
+                            nuevo.ToolTipText = markers.Markers[cont].ToolTipText;
+                            markers.Markers[cont] = nuevo;
+                            encontrado = true;
+                        }
+                        cont++;
+                        
+                    }
+                }
+
+                catch    
+                {
+                    System.Console.WriteLine(elegidos[i] + " no encontrado");
+                }
+                
+            }
+            gmap.Position = new GMap.NET.PointLatLng(4.703568, -74.161406);
+            gmap.Zoom = 5;
+            gmap.Refresh();
+            tabControl1.SelectTab(0);
+            
+
+
         }
 
 
