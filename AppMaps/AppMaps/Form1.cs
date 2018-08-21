@@ -207,14 +207,14 @@ namespace AppMaps
 
             List<String> elegidos=new List<string>();
 
-            StreamReader sr = new StreamReader("/data/ARTICULOS.txt");
+            StreamReader sr = new StreamReader("data/ARTICULOS.txt");
             String linea = sr.ReadLine();
 
             while (linea != null)
             {
-                String[] splt = linea.Split(':');
+                String[] splt = linea.Trim().Split(':');
                 String cod = splt[0];
-                String[] arts = splt[1].Split(' ');
+                String[] arts = splt[1].Trim().Split(' ');
 
                 Boolean artuno = false;
                 Boolean artdos = false;
@@ -222,6 +222,7 @@ namespace AppMaps
                 int contdos = 0;
                 while (!artuno && contuno < arts.Length)
                 {
+                    //Console.WriteLine(arts[contuno]);
                     if (int.Parse(arts[contuno]) == uno)
                     {
                         artuno = true;
@@ -230,7 +231,7 @@ namespace AppMaps
                 }
                 while (artuno&&!artdos&&contdos<arts.Length)
                 {
-                    if(int.Parse(arts[contuno]) == dos)
+                    if(int.Parse(arts[contdos]) == dos)
                     {
                         artdos = true;
 
@@ -241,8 +242,9 @@ namespace AppMaps
                 {
                     elegidos.Add(cod);
                 }
+                linea = sr.ReadLine();
             }
-            
+            sr.Close();
             for (int i = 0; i < elegidos.Count; i++)
             {
                 Boolean encontrado = true;
@@ -272,6 +274,7 @@ namespace AppMaps
             }
             gmap.Position = new GMap.NET.PointLatLng(4.703568, -74.161406);
             gmap.Zoom = 5;
+            gmap.Overlays.Add(markers);
             gmap.Refresh();
             tabControl1.SelectTab(0);
             
@@ -359,6 +362,17 @@ namespace AppMaps
         private void chart2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            String parS=listView2.SelectedItems[0].Text;
+            int p1 = Int32.Parse(parS.Split('-')[0]);
+            int p2 = Int32.Parse(parS.Split('-')[1]);
+            KeyValuePair<int, int> par = new KeyValuePair<int, int>(p1,p2);
+
+
+            cambiarColorArticulos(par);
         }
     }
 }
